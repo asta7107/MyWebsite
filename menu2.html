@@ -3,6 +3,7 @@
  <head>
     <title></title>
      <script>
+       
          function query() {
             let a = prompt("네이버로 이동하시겠습니까?");
             return a; 
@@ -12,10 +13,26 @@
             e.preventDefault();
             alert("강제 취소됨");
          }
+          var sum = 0;
+         function cal(cBox) {
+            if(cBox.checked)
+         {
+            sum  = sum + parseInt(cBox.value);
+         }
+         else{
+            sum=  sum - parseInt(cBox.value);
+            
+         }
+         document.getElementById("sumt").value = sum;
+
+
+         }
+
+         
         </script>
  </head>
     <body bgcolor="yellow">
-        menu2 page<br>
+        menu2 page -2335035 진우성<br>
         <a href="http://www.naver.com" onclick="return query()">
             네이버로 이동할 지 물어보는 링크</a>
             <hr>
@@ -27,6 +44,19 @@
                     성별: <input type="radio" value="남" id="se">남
                           <input type="radio" value="여" id="se2">여
                           </form>
+                          <form> 
+                            <h1>물품을 선택하면 금액이 자동 계산됩니다 </h1>
+                            <hr>
+                             <input type="checkbox" name="hat" value="10000" onclick="cal(this)">모자 1만원
+                              <input type="checkbox" name="bag" value="20000" onclick="cal(this)">가방 2만원
+                               <input type="checkbox" name="shose" value="30000" onclick="cal(this)"> 신발 3만원
+                               <input type="checkbox" name="a" value="20000" onclick="cal(this)"> 치장품a 2만원
+                               <input type="checkbox" name="b" value="10000" onclick="cal(this)"> 치장품b 1만원
+                                <input type="checkbox" name="c" value="5000" onclick="cal(this)"> 치장품c 5천원 <br> 
+
+                                지불하실 금액은 <input type="text" value="0" id="sumt">
+                                </form>
+
 
                           
 
